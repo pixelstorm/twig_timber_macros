@@ -1,0 +1,78 @@
+{# text_with_image #}
+
+{% macro text_with_image(
+	text_with_image_title, 
+	text_with_image_subtitle, 
+	text_with_image_text, 
+	text_with_image_list, 
+	sequence, 
+	text_with_image_btn_link, 
+	text_with_image_btn_label,
+	text_with_image_btn_target,
+	text_with_image_class,
+	context
+)%}
+
+<div class="text-with-image">
+	<div class = "container">
+		<div class = "row text-with-image__wrapper {{ sequence }}  ">
+			{{text_with_image_title}}
+			{{text_with_image_subtitle}}
+			{{text_with_image_text}}
+			{{text_with_image_image}}
+			<a class  href = "{{text_with_image_btn_link}}">
+				{{text_with_image_btn_label}}
+			</a>
+		</div>
+	</div>
+</div>
+{%endmacro%}
+
+
+{#
+				//output on the page.twig or whereever it goes
+
+				{% from '/partial/text-with-image/macro.twig' import text_with_image %}
+				{{ text_with_image(
+					text_with_image_title, 
+					text_with_image_text, 
+					text_with_image_list, 
+					'row', 
+					text_with_image_btn_link, 
+					text_with_image_btn_label,
+					text_with_image_btn_target,
+					_context,
+				)}}
+
+
+
+				//scss boiler plates
+
+				.text-with-image {
+					&__title {
+
+					}
+					&__list {
+
+					}
+					&__image {
+
+					}
+					&__subtitle {
+
+					}
+					&__text {
+
+					}
+					&__button {
+
+					}
+				}
+
+
+
+
+
+
+
+#}
