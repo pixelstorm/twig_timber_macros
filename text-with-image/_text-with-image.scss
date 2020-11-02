@@ -1,0 +1,52 @@
+.text-with-image {
+	&__wrapper {
+		display: grid;
+		height: 80vh;
+		grid-template-columns: 1fr;
+		grid-template-rows: [title] 0.2fr [content] .5fr [image] .5fr [list] 0.3fr [footer]  0.3fr;
+		grid-template-areas: 
+		"header"
+		"content"
+		"image"
+		"list"
+		"footer";
+
+	@media screen and (min-width: 768px) {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: [title] 0.3fr [content] .5fr [footer] 0.3fr;
+		grid-template-areas: 
+		"header header"
+		"content image"
+		"content list"
+		"footer footer"
+		}
+	}
+	&__title-wrapper {
+		grid-area: header;
+	}
+
+	&__image-wrapper {
+		grid-area: image;
+		.image {
+			width: 100%;
+		}
+	}
+
+	&__content-wrapper {
+		grid-area: content;
+	}
+
+	&__text-wrapper {
+		grid-area: content;
+	}
+
+	&__list-wrapper {
+		grid-area: list;
+	}
+
+	&__link-wrapper {
+		grid-area: footer;
+	}
+}
+
+
